@@ -1,0 +1,46 @@
+# if/else  eq/ne/lt/gt/and/or/not
+begin:
+{{if .Values.nameOverride}}
+controllflow.nameOverride: "controllflow"
+{{else}}
+controllflow.nameOverride: {{.Values.nameOverride}}
+{{end}}
+end:
+
+begin2:
+{{- if .Values.nameOverride }}
+controllflow.nameOverride: "controllflow"
+{{- else }}
+controllflow.nameOverride: {{.Values.nameOverride}}
+{{- end }}
+end2：
+
+begin3:
+{{ if .Values.nameOverride -}}
+controllflow.nameOverride: "controllflow"
+{{ else -}}
+controllflow.nameOverride: {{.Values.nameOverride}}
+{{ end -}}
+end3：
+
+begin4:
+{{- if .Values.nameOverride -}}
+controllflow.nameOverride: "controllflow"
+{{- else -}}
+controllflow.nameOverride: {{.Values.nameOverride}}
+{{- end -}}
+end4：
+
+# with 修改作用域
+# . 引用当前作用域，
+# 特定作用域中，不能访问父作用域对象
+{{- with .Values.ingress}}
+ingress.enabled: {{.enabled}}
+{{- end}}
+
+
+# range 设置作用域
+range.testArray:
+  {{- range .Values.testArray }}
+  - {{ . | title | quote }}
+  {{- end }}

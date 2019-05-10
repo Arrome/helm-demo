@@ -1,0 +1,12 @@
+# quote
+quote.ingress.enabled: {{quote .Values.ingress.enabled}}
+quote.ingress.enabled2: {{ .Values.ingress.enabled | quote }}
+
+# default
+default.nameOverride: {{ default "demochart" .Values.nameOverride }}
+default.nameOverride2: {{ .Values.nameOverride | default "demochart" | quote }}
+
+# include && nindent 缩进
+{{ include "demochart.test" .}}
+{{- include "demochart.test" . | nindent 4}}
+{{ template "demochart.test" }}

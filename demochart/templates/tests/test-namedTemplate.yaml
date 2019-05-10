@@ -1,0 +1,11 @@
+# 模板定义的名字是全局的，定义两个相同名字的模板，最后加载的那个被使用。推荐:名字加上chartname
+{{- define "demochart.test"}}
+test: "test"
+  test1: "test1"
+{{- end}}
+
+# 加点和不加点的区别，include引入必须加点
+ {{- template "demochart.test"}}
+{{- template "demochart.test" .}}
+
+{{- include "demochart.test" .}}

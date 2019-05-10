@@ -1,0 +1,3 @@
+# 定义模板变量 `$var := xxx`,在with ranges指定作用域下，其变量对应作用域不变
+{{- $relname := .Release.Name -}}
+release.name: {{ $relname }}

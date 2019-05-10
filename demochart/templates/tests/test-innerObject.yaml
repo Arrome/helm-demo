@@ -1,0 +1,31 @@
+# 内置变量Release
+release.name: {{.Release.Name}}
+release.time: {{ .Release.Time }}
+release.namespace: {{.Release.Namespace}}
+release.service: {{.Release.Service}} # 总是Tiller
+release.revision: {{.Release.Revision}} # release版本号，从1开始，每执行helm upgrade,加1
+release.isupgrade: {{.Release.IsUpgrade}} # 本次操作是否为升级
+release.isInstall: {{.Release.IsInstall}} # 本次操作是否为安装
+
+# 内置变量Values
+# 四个来源：依次优先级升高
+#   1. values.yaml文件
+#   2. 若为子chart，用父chart的values.yaml文件的值
+#   3. `helm install`或`helm upgrade` 通过`-f`指定文件
+#   4. `--set` 指定参数
+values.ingress.enabled: {{.Values.ingress.enabled}}
+values.ingress:
+  enabled: {{.Values.ingress.enabled}}
+  annnotations: {{.Values.ingress.annotations}}
+
+
+# 内置变量Chart
+
+
+# 内置变量Files 提供访问文件功能(templates下文件和.helmignore不能被访问)
+
+
+
+# 内置变量Capabilities
+
+# 内置变量Template
