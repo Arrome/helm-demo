@@ -1,0 +1,13 @@
+# service spec
+spec:
+  type: "ClusterIP" # ClusterIP(default)/NodePort/LoadBalancer/ExternalName
+  ports:
+    - name: ""
+      nodePort: x
+      port: x
+      protocol: "TCP" # UDP/TCP(default)/SCTP
+      targetPort: x
+  selector:
+    key1: value1
+    key2: value2
+

@@ -1,0 +1,137 @@
+# pod spec
+spec:
+  serviceAccountName: "default" #默认为default，通过serviceAccount引用secret
+  containers:
+    - name: "xxx"
+      image: "xxx"
+      iamgePullPolicy: "IfNotPresent" # Always(default)/Never/IfNotPresent
+      ports:
+        - name: ""
+          hostIP: "" # 哪个主机绑定externalPort
+          hostPort: x # 大多不需要配置， 0 < x < 65536
+          containerPort: x # 0 < x < 65536
+          protocol: "TCP" # UDP/TCP/SCTP
+      env:
+        - name: "xxx"
+          value: "xxx"
+          valueFrom:
+            configMapKeyRef: # 从configMap中查一个key
+              name: "xxx" # Name of the referent
+              key: "xxx"
+              optional: true #指定是否必须定义ConfigMap或其secrets
+            fieldRef:
+              apiVersion: "v1" #默认v1
+              fieldPath: "xxx" #metadata.name, metadata.namespace, metadata.labels, metadata.annotations, spec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP
+            resourceFieldRef:  # 查询容器资源
+              containerName: "xxx"
+              divistor: #Specifies the output format of the exposed resources, defaults to "1"
+              resource: ""
+            secretKeyRef: #Selects a key of a secret in the pod's namespace
+              key: ""
+              name: ""
+              optional: true
+      resources:
+        limits: # 最大资源限制
+          key1: value1
+          key2: value2
+        requests: # 最小资源请求
+          key1: value1
+          key2: value2
+      volumeMounts: #挂载到容器filesystem
+        - name: "xxx" # 匹配Volume
+          mountPath: "xxxx" # 挂载到容器的目录
+          readOnly: true #默认false
+          subPath: "xxx" #默认卷根目录
+          mountPropagation: "xx" #挂载如何从主机传播到容器
+      # 定期检查容器活性
+      livenessProbe:
+        initialDelaySeconds: x # 启动活性探测之前容器启动的秒数
+        periodSeconds: 10 #默认10，最小值：1
+        timeoutSeconds: 1 #默认1，最小值：1
+        failureThreshold: 3 #默认3，最小值：1
+        seccessThreshold: 1 #默认1，最小值：1
+        exec:
+          command:
+            - xxx
+        httpGet:
+        tcpSocket:
+          host: "" # 可选，主机名，默认时pod的IP
+          port: x
+  # volume信息
+  volumes:
+    - name: "volume-hostPath"
+      hostPath:
+        path: "xxx"
+        type: "" # hostPath值默认为空
+    - name: "volume-configMap"
+      configMap:
+        name: "xxx" # configMap名字
+        defaultMode: 0644 # 0 < x < 0777,默认0644
+        items: #items 不指定，默认以每个key生成一个以key命名的文件
+          - key: ""
+            mode: x
+            path: "" # 值以其进行挂载
+        optional: true
+    - name: "volume-secret"
+      secret:
+        secretName: "xxx" # secret名字
+        defaultMode: 0644
+        items:
+          - key: ""
+            path: ""
+            mode: x
+        optional: true
+  imagePullSecrets:
+    - secret1
+
+  # ------------pod调度配置开始-----------------
+  nodeName: "" # 非空则指定调度到其上
+  nodeSelector:
+    key1: value1
+    key2: value2
+  tolerations:
+    - key: ""
+      value: ""
+      effect: ""
+      operator: ""
+      tolerationSeconds: x
+  # 亲和度 调度
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        preference:
+          - matchExpressions: # array
+            - key: xxx
+              operator: xxx
+              values:
+                - value1
+                - value2
+          - matchFields: # array
+            - key: xxx
+              operator: xxx
+              values:
+                - value1
+                - value2
+        weight: x # 1~100
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions: # array
+            - key: xxx
+              operator: xxx
+              values:
+                - value1
+                - value2
+          - matchFields: # array
+            - key: xxx
+              operator: xxx
+              values:
+                - value1
+                - value2
+    podAffinity:
+    podAntiAffinity:
+
+  # ------------pod调度配置结束------------------
+  terminationGracePeriodSeconds: 30 # pod优雅终止的可选持续时间（进程预期清理时间，0表示立即删除），默认30s
+
+  activeDeadlineSeconds: x # 正整数
+  automountServiceAccountToken: false # boolean

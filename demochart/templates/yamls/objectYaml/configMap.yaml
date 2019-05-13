@@ -1,0 +1,17 @@
+# configMap
+# 供容器使用：
+# 1.生成容器内环境变量(设置容器启动命令的启动参数)
+# 2.以Volume方式挂载为容器内部的文件或目录
+#
+# 注意：
+# * 相同namespace下的pod才可以引用
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "configmap"
+data:
+  key1: value1
+  key2: value2
+binaryData:
+  key1: vaule1
+  key2: value2

@@ -1,0 +1,10 @@
+# metadata
+metadate:
+  name: "xxx" # 同一namespace下唯一，必须(尽管某些资源允许客户端请求自动生成)
+  labels:
+    key1: value1
+    key2: value2
+  namespace: "xxx" #空namespace默认default
+  annotations: #附加信息，标记资源对象（build\release\docker镜像等信息，日志监控等仓库信息，调试工具信息，团队维护信息）
+    key1: value1
+    key2: value2

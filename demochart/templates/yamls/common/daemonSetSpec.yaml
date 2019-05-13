@@ -1,0 +1,22 @@
+# daemon spec
+spec:
+  updateStrategy: #新daemonset替换旧的策略
+    type: RollingUpdate # 默认RollingUpdate，可选择OnDelete
+    rollingUpdate: #滚动更新配置，type=RollingUpdate时配置
+      maxUnavailable: 10% #百分百或抽象值
+  selector:
+    matchLabels: # 并集匹配
+      key1: value1
+      key2: value2
+    matchExpressions: # 并集匹配
+      key: xxx
+      operator: xxx
+      values:
+        - value1
+        - value2
+  template:
+    metadata:
+    spec:
+  minReadySeconds: 0 # 新创建daemonset没有容器crashing的最小时间，默认：0
+  revisionHistoryLimit: 10 # 允许回滚的历史保留个数，默认 10
+

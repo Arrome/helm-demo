@@ -10,3 +10,6 @@ default.nameOverride2: {{ .Values.nameOverride | default "demochart" | quote }}
 {{ include "demochart.test" .}}
 {{- include "demochart.test" . | nindent 4}}
 {{ template "demochart.test" }}
+
+# toYaml 转为yaml格式
+{{ toYaml .Values.annotations }}
