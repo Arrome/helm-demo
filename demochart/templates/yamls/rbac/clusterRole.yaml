@@ -1,0 +1,22 @@
+# clusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: "xxx"
+rules:
+  - apiGroups: []
+    resources: []
+    verbs: []
+    resourceNames: []
+    nonResourceURLs: []
+aggregationRule:
+  clusterRoleSelectors:
+    - matchLabels: # 并集匹配
+        key1: value1
+        key2: value2
+      matchExpressions: # 并集匹配
+        key: xxx
+        operator: xxx
+        values:
+          - value1
+          - value2

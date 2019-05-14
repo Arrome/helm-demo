@@ -1,0 +1,16 @@
+# RoleBinding
+# 将同一namespace中的subject(User,Group,ServiceAccount)绑定到某个具体权限Role下
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: "xxx"
+  namespace: default
+subjects:
+  - kind: "" # User/Group/ServiceAccount
+    name: ""
+    apiGroup: "" # 对于ServiceAccount默认"",对于User/Group默认"rbac.authorization.k8s.io"
+    namespace: ""
+roleRef:
+  kind: ""
+  name: ""
+  apiGroup: ""

@@ -4,7 +4,7 @@ metadate:
   labels:
     key1: value1
     key2: value2
-  namespace: "xxx" #空namespace默认default
+  namespace: "xxx" # (资源对象通过此namespace指定对应namespace进行创建，否则报错命名空间不匹配)空namespace默认default
   annotations: #附加信息，标记资源对象（build\release\docker镜像等信息，日志监控等仓库信息，调试工具信息，团队维护信息）
     key1: value1
     key2: value2

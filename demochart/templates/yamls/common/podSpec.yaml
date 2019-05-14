@@ -1,6 +1,7 @@
 # pod spec
 spec:
   serviceAccountName: "default" #默认为default，通过serviceAccount引用secret
+  initContainers: []
   containers:
     - name: "xxx"
       image: "xxx"
@@ -30,6 +31,14 @@ spec:
               key: ""
               name: ""
               optional: true
+      envFrom: # configMaps 资源集合
+        - prefix: "xxx"
+          configMapRef:
+             name: "xxx"
+             optional: true
+          secretRef:
+            name: "xxx"
+            optional: true
       resources:
         limits: # 最大资源限制
           key1: value1
