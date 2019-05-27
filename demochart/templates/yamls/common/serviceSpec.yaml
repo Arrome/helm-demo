@@ -6,7 +6,7 @@ spec:
       nodePort: x
       port: x
       protocol: "TCP" # UDP/TCP(default)/SCTP
-      targetPort: x
+      targetPort: x # 未指定和port一致
   selector:
     key1: value1
     key2: value2

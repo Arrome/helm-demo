@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myapp
+  name: myapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myApp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: myApp
+    spec:
+      containers:
+      - image: centos:latest
+        imagePullPolicy: Never
+        name: centos
+        command: ["/bin/bash"]
+        args:
+          - "-c"
+          - "while true;do echo helloword;sleep 10;done"
+---
+# 普通方式，通过selector，自动生成endpoints
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-service
+spec:
+  type: ClusterIP
+  selector:
+    app: myApp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9376
+---
+# non-selector,自定义endpoints,将流量定位到ip:port
