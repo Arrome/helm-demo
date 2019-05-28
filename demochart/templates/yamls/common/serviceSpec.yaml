@@ -2,7 +2,18 @@
 spec:
   type: "ClusterIP" # ClusterIP(default)/NodePort/LoadBalancer/ExternalName
   ports:
-    - name: ""
+    - name: "x"
+      port: x
+      protocol: "TCP" # UDP/TCP(default)/SCTP
+      targetPort: x # 未指定和port一致
+  selector:
+    key1: value1
+    key2: value2
+---
+spec:
+  type: "NodePort"
+  ports:
+    - name: "x"
       nodePort: x
       port: x
       protocol: "TCP" # UDP/TCP(default)/SCTP
@@ -10,4 +21,3 @@ spec:
   selector:
     key1: value1
     key2: value2
-

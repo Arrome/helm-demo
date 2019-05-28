@@ -1,0 +1,49 @@
+# 设置service的ClusterIP=None，通过service domainName存取endpoint对应的Pod（selector创建的endpoint）
+# 稳定：多次重新调度保持存储、DNS名称、hostname都跟Pod绑定一起，跟调度哪个节点没有关系
+# headless-service 负载Pods的唯一网络标识，给一个集群内的每个成员提供一个唯一的DNS域名作为网络标识，集群内成员使用域名通信。
+#                  管理的域名格式："${service_name}.${k8s_namespace}.svc.cluster.local"
+#                  Pod子域名格式："${pod_name}.${service_name}.${k8s_namespace}.svc.cluster.local"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None # headless service
+  selector:
+    app: myApp
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: myapp
+  name: myapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myApp
+  serviceName: nginx
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 1
+  template:
+    metadata:
+      labels:
+        app: myApp
+    spec:
+      containers:
+      - image: busybox:latest
+        imagePullPolicy: Never
+        name: busybox
+        command: ["/bin/sh"]
+        args:
+          - "-c"
+          - "while true;do echo helloword;sleep 10;done"

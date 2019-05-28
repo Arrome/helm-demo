@@ -25,17 +25,30 @@ spec:
           - "-c"
           - "while true;do echo helloword;sleep 10;done"
 ---
-# 普通方式，通过selector，controller自动创建对应的endpoints
+# non-selector方式,自定义endpoints,将流量导向到ip:port
 kind: Service
 apiVersion: v1
 metadata:
   name: my-service
+  namespace: default
 spec:
   type: ClusterIP
-  selector:
-    app: myApp
   ports:
-  - protocol: TCP
+  - name: test-non-selector
+    protocol: TCP
     port: 80
-    targetPort: 9376
+    targetPort: 50075
 
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: my-service
+  namespace: default
+subsets:
+- addresses:
+  - ip: 192.168.183.154
+  ports:
+  - name: test-non-selector   # 若此处指明name值，service也必须指明，否则不生效
+    port: 50075
+    protocol: TCP
