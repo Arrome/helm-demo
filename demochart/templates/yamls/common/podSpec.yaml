@@ -93,6 +93,15 @@ spec:
   imagePullSecrets:
     - secret1
 
+  #-------------pod域名相关配置开始-----------
+  hostname: x
+  subdomain: x # 如果指明 pod域名：<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>,未指明则没有域名
+  hostAliases: # 非hostnetwork才有效，写入到hosts文件（kubelet只管理非hostnetwork类型的pod）
+    - ip: "xx.xx.xx.xx"
+      hostnames:
+        - "xxx" #主机名被解析为ip指定的地址
+  #-------------pod域名相关配置结束-----------
+
   # ------------pod调度配置开始-----------------
   nodeName: "" # 非空则指定调度到其上
   nodeSelector:

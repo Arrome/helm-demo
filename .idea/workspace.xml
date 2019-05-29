@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5850ab7d-b871-4218-8396-946f0b2d0852" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo-yamls/service/nonSelectorClusterIPService.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-yamls/service/ClusterIPService.yaml" afterPath="$PROJECT_DIR$/demo-yamls/service/ClusterIPService.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-yamls/service/headlessService.yaml" afterPath="$PROJECT_DIR$/demo-yamls/service/headlessService.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demochart/templates/yamls/common/serviceSpec.yaml" afterPath="$PROJECT_DIR$/demochart/templates/yamls/common/serviceSpec.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demochart/templates/yamls/common/podSpec.yaml" afterPath="$PROJECT_DIR$/demochart/templates/yamls/common/podSpec.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="helmchart.iws" />
@@ -51,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="podSpec.yaml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="podSpec.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demochart/templates/yamls/common/podSpec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0" vertical-offset="1850" max-vertical-offset="2416">
-              <caret line="125" column="20" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.33420366" vertical-offset="1440" max-vertical-offset="2560">
+              <caret line="98" column="72" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -94,17 +91,17 @@
       <file leaf-file-name="serviceSpec.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demochart/templates/yamls/common/serviceSpec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="464">
+            <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="464">
               <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="headlessService.yaml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="headlessService.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo-yamls/service/headlessService.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2580645" vertical-offset="0" max-vertical-offset="864">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
@@ -124,7 +121,7 @@
       <file leaf-file-name="nonSelectorClusterIPService.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo-yamls/service/nonSelectorClusterIPService.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.6333333" vertical-offset="383" max-vertical-offset="944">
+            <state vertical-scroll-proportion="0.0" vertical-offset="383" max-vertical-offset="944">
               <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding />
             </state>
@@ -157,7 +154,6 @@
         <option value="$PROJECT_DIR$/demochart/templates/yamls/common/daemonSetSpec.yaml" />
         <option value="$PROJECT_DIR$/demochart/templates/yamls/objectYaml/configMap.yaml" />
         <option value="$PROJECT_DIR$/demochart/README.md" />
-        <option value="$PROJECT_DIR$/demochart/templates/yamls/common/podSpec.yaml" />
         <option value="$PROJECT_DIR$/demochart/templates/yamls/objectYaml/clusterRole.yaml" />
         <option value="$PROJECT_DIR$/demochart/templates/yamls/objectYaml/role.yaml" />
         <option value="$PROJECT_DIR$/demochart/templates/yamls/common/objectMetadata.yaml" />
@@ -171,6 +167,7 @@
         <option value="$PROJECT_DIR$/demo-yamls/service/ClusterIPService.yaml" />
         <option value="$PROJECT_DIR$/demo-yamls/service/nonSelectorClusterIPService.yaml" />
         <option value="$PROJECT_DIR$/demo-yamls/service/headlessService.yaml" />
+        <option value="$PROJECT_DIR$/demochart/templates/yamls/common/podSpec.yaml" />
       </list>
     </option>
   </component>
@@ -209,6 +206,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -357,8 +356,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -822,7 +819,8 @@
       <workItem from="1557794627323" duration="7000" />
       <workItem from="1557846993369" duration="2100000" />
       <workItem from="1558970877267" duration="2951000" />
-      <workItem from="1559055354900" duration="6364000" />
+      <workItem from="1559055354900" duration="6516000" />
+      <workItem from="1559141579218" duration="2611000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1557708194176</created>
@@ -834,10 +832,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51215000" />
+    <option name="totallyTimeSpent" value="53978000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -849,10 +847,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5417377" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27474403" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2246596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -907,7 +905,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demochart/README.md">
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+      <provider editor-type-id="MultiMarkdownFxHtmlEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
@@ -915,7 +913,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider editor-type-id="MultiMarkdownFxHtmlEditor">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
         <state />
       </provider>
     </entry>
@@ -1137,7 +1135,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+      <provider editor-type-id="MultiMarkdownFxHtmlEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
@@ -1145,12 +1143,12 @@
           <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
         </state>
       </provider>
-      <provider editor-type-id="MultiMarkdownFxHtmlEditor">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demochart/README.md">
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+      <provider editor-type-id="MultiMarkdownFxHtmlEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
@@ -1158,7 +1156,7 @@
           <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
         </state>
       </provider>
-      <provider editor-type-id="MultiMarkdownFxHtmlEditor">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
         <state />
       </provider>
     </entry>
@@ -1194,7 +1192,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1246,17 +1243,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demochart/templates/yamls/common/podSpec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="1850" max-vertical-offset="2416">
-          <caret line="125" column="20" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo-yamls/service/nonSelectorClusterIPService.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6333333" vertical-offset="383" max-vertical-offset="944">
+        <state vertical-scroll-proportion="0.0" vertical-offset="383" max-vertical-offset="944">
           <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
           <folding />
         </state>
@@ -1272,8 +1261,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo-yamls/service/headlessService.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2580645" vertical-offset="0" max-vertical-offset="864">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demochart/templates/yamls/common/podSpec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33420366" vertical-offset="1440" max-vertical-offset="2560">
+          <caret line="98" column="72" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
           <folding />
         </state>
       </provider>
