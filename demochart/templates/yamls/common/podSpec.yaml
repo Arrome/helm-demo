@@ -90,7 +90,7 @@ spec:
             path: ""
             mode: x
         optional: true
-  imagePullSecrets:
+  imagePullSecrets:  # 创建pod时，通过引用镜像仓库认证文件下载
     - secret1
 
   #-------------pod域名相关配置开始-----------

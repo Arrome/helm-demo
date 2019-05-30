@@ -1,0 +1,54 @@
+# 环境变量方式 env/envFrom,更新后pod环境变量不会更新
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+  namespace: default
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           upstream
+           fallthrough in-addr.arpa ip6.arpa
+        }
+        prometheus :9153
+        proxy . /etc/resolv.conf
+        cache 30
+        loop
+        reload
+        loadbalance
+    }
+  key: value
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myapp
+  name: myapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myApp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: myApp
+    spec:
+      containers:
+      - image: centos:latest
+        imagePullPolicy: Never
+        name: centos
+        command: ["/bin/bash"]
+        args:
+          - "-c"
+          - "while true;do echo helloword;sleep 10;done"
+        envFrom: # configMaps 资源集合
+          - configMapRef:
+              name: configmap
+              optional: true
