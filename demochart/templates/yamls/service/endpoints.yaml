@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: x
+  namespace: x
+subsets:
+- addresses:
+  - ip: 192.168.183.154
+    hostname: x
+    nodeName: x
+    targetRef:
+
+  ports:
+  - name: test-non-selector   # 若此处指明name值，service也必须指明，否则不生效
+    port: 50075
+    protocol: TCP
+  notReadyAddresses:
+  - hostname: x
+    ip: x
+    nodeName: x
+    targetRef:
