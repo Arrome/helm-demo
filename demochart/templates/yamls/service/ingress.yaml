@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  backend: # 用于服务那些没有匹配到任何规则的请求（配置时backend、rules必有其一）
+    serviceName: x
+    servicePort: x
+  rules:  # 定义资源转发列表，rules定义规则，没有匹配到的流量转发到由backend定义默认后端
+  - host: x  # 暂不支持IP地址
+    http:
+      paths:
+      - backend:
+          serviceName: x
+          servicePort: x
+        path: x
+  tls:
+    hosts:
+    - xxx
+    - xxx
+    secretName: x

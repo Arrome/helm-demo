@@ -14,10 +14,18 @@ spec:
   type: "NodePort"
   ports:
     - name: "x"
-      nodePort: x
+      #nodePort: x  # 范围：30000-32767，不指定自动分配
       port: x
       protocol: "TCP" # UDP/TCP(default)/SCTP
       targetPort: x # 未指定和port一致
   selector:
     key1: value1
     key2: value2
+---
+# LoadBalancer 和NodePort类似，除了使用一个ClusterIP和NodePort外，向使用的公有云申请一个LB（后端映射到各节点的NodePort）实现从集群外通过LB访问服务
+
+
+
+---
+# ExternalName 面向集群外服务，将外部服务映射进K8S集群，具备K8S内服务的一些特性，为集群内部提供服务。
+#         不指定 selector，没有 port 和 endpoints
