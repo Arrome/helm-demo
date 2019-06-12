@@ -1,3 +1,7 @@
+# Ingress策略定义和一个具体的Ingress Controller结合，形成完整的http负载分发
+# Ingress对象定义策略。Ingress Controller(一般使用谷歌nginx-ingress-controller镜像创建daemonSet形式Pod)
+# Ingress Controller将根据Ingress的规则设置将客户端请求直接转发到Service后端Endpoint上，跳过kube-proxy设置的iptables规则，kube-proxy不起作用
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -13,10 +17,10 @@ spec:
   - host: x  # 暂不支持IP地址
     http:
       paths:
-      - backend:
+      - path: x
+        backend:
           serviceName: x
           servicePort: x
-        path: x
   tls:
     hosts:
     - xxx
