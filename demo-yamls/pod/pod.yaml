@@ -6,7 +6,8 @@ metadata:
   name: test
 spec:
   containers:
-  - image: busybox
+  - image: busybox:latest
+    imagePullPolicy: Never
     name: busybox
     command: ["/bin/sh"]
     args: ["-c","while true;do echo hello;sleep 10;done"]

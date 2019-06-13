@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5850ab7d-b871-4218-8396-946f0b2d0852" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo-yamls/pod/pod.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-yamls/pod/pod.yaml" afterPath="$PROJECT_DIR$/demo-yamls/pod/pod.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="helmchart.iws" />
@@ -81,8 +81,8 @@
       <file leaf-file-name="pod.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo-yamls/pod/pod.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="409">
-              <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.46943766" vertical-offset="0" max-vertical-offset="409">
+              <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -894,7 +894,7 @@
       <workItem from="1559576442047" duration="115000" />
       <workItem from="1560263260267" duration="2024000" />
       <workItem from="1560352831179" duration="2590000" />
-      <workItem from="1560431008441" duration="2108000" />
+      <workItem from="1560431008441" duration="2149000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1557708194176</created>
@@ -906,7 +906,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70652000" />
+    <option name="totallyTimeSpent" value="70693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1333,8 +1333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo-yamls/pod/pod.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="409">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.46943766" vertical-offset="0" max-vertical-offset="409">
+          <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
           <folding />
         </state>
       </provider>
